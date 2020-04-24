@@ -5,16 +5,16 @@ class Rational {
 	int numerator;
 	int denomenator;
 public:
-	Rational();	//default constructor
-	Rational(int, int);	//sets denomenator to 1 when invalid
+	Rational();	
+	Rational(int, int);	
 	Rational(int wholeNumber);
 
-	void input(int, int);	//input data 
+	void input(int, int);	
 
 	int getNume();
 	int getDenom();
 
-	void result();	//display data 
+	void result();	
 	Rational operator+(const Rational&);
 	Rational operator-(const Rational&);
 	Rational operator*(const Rational&);
@@ -43,10 +43,10 @@ Rational::Rational(int nume) {
 void Rational::input(int nume, int denom) {
 	numerator = nume;
 
-	if (denom > 0) //if positive
+	if (denom > 0) 
 		denomenator = denom;
 
-	else if (denom < 0) { //if negative, move denomenator to numerator
+	else if (denom < 0) { 
 		denomenator = -denom;
 		numerator *= -1;
 	}
