@@ -1,4 +1,6 @@
 #include<iostream>
+#include<fstream>
+
 using namespace std;
 
 class Rational {
@@ -9,7 +11,7 @@ public:
 	Rational(int, int);	
 	Rational(int wholeNumber);
 
-	void input(int, int);	
+	void input(int, int);
 
 	int getNume();
 	int getDenom();
@@ -20,10 +22,25 @@ public:
 	Rational operator*(const Rational&);
 	Rational operator/(const Rational&);
 	
+	Rational operator==(const Rational&);
+	Rational operator!=(const Rational&);
+	Rational operator<(const Rational&);
+	Rational operator>(const Rational&);
+	Rational operator<=(const Rational&);
+	Rational operator>=(const Rational&);
+
+
 	Rational add(const Rational&);
 	Rational subtract(const Rational&);
 	Rational multiply(const Rational&);
 	Rational divide(const Rational&);
+
+	Rational equal(const Rational&);
+	Rational not_equal(const Rational&);
+	Rational greater_than(const Rational&);
+	Rational less_than(const Rational&);
+	Rational greater_equal(const Rational&);
+	Rational less_equal(const Rational&);
 };
 
 Rational::Rational() {
@@ -41,6 +58,10 @@ Rational::Rational(int nume) {
 }
 
 void Rational::input(int nume, int denom) {
+
+	fstream fout;
+	fout.open("example.csv");
+
 	numerator = nume;
 
 	if (denom > 0) 
@@ -108,8 +129,35 @@ Rational Rational::divide(const Rational& b) {
 
 	return Rational(nume, denom);
 }
-Rational Rational::operator/(const Rational& b) {
-	return divide(b);
+
+Rational Rational::equal(const Rational& b) {
+
+	return equal(b);
+}
+
+Rational Rational::not_equal(const Rational& b) {
+
+	return not_equal(b);
+}
+
+Rational Rational::greater_than(const Rational& b) {
+
+	return greater_than(b);
+}
+
+Rational Rational::less_than(const Rational& b) {
+
+	return less_than(b);
+}
+
+Rational Rational::greater_equal(const Rational& b) {
+
+	return greater_equal(b);
+}
+
+Rational Rational::less_equal(const Rational& b) {
+	
+	return less_equal(b);
 }
 
 int main() {
